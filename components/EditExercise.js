@@ -27,7 +27,7 @@ function EditExercise() {
     }
     else {
     axios
-      .post("http://localhost:3001/exercises/update/"+id, updateExercise)
+      .post(`${process.env.API_BASE_ENDPOINT}exercises/update/`+id, updateExercise)
       .then(() => {
         alert("Exercise updated");
       })

@@ -28,7 +28,7 @@ function CreateExercise() {
     }
     else {
     axios
-      .post("http://localhost:3001/exercises/add", exercise)
+      .post(`${process.env.API_BASE_ENDPOINT}exercises/add`, exercise)
       .then(() => {
         console.log("Exercise added successfully")
       })

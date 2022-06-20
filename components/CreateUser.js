@@ -16,7 +16,7 @@ function CreateUser() {
     if (username === "") {
       alert("Please fill in your username");
     } else {
-      axios.post("http://localhost:3001/users/add", user)
+      axios.post(`${process.env.API_BASE_ENDPOINT}users/add`, user)
         .then(() => {
           alert("User added successfully");
         })

@@ -9,7 +9,7 @@ function ExercisesList() {
   const router = useRouter();
   useEffect(() => {
     const getExercises = async () => {
-      let res = await axios.get("http://localhost:3001/exercises");
+      let res = await axios.get(`${process.env.API_BASE_ENDPOINT}/exercises`);
       const data = res.data;
       console.log(data.map((exercises) => ({ id: exercises._id })));
       setExercises(
@@ -26,7 +26,7 @@ function ExercisesList() {
   }, []);
   const deleteExercise = (id) => {
     axios
-      .delete("http://localhost:3001/exercises/" + id)
+      .delete(`${process.env.API_BASE_ENDPOINT}exercises/` + id)
       .then(() => router.reload("/"));
   };
 
