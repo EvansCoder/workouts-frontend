@@ -27,7 +27,7 @@ function EditExercise() {
     }
     else {
     axios
-      .post(`${process.env.API_BASE_ENDPOINT}exercises/update/`+id, updateExercise)
+      .post("https://backend-workouts.vercel.app/exercises/update/"+id, updateExercise)
       .then(() => {
         alert("Exercise updated");
       })

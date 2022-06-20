@@ -28,14 +28,14 @@ function CreateExercise() {
     }
     else {
     axios
-      .post(`${process.env.API_BASE_ENDPOINT}exercises/add`, exercise)
+      .post("https://backend-workouts.vercel.app/exercises/add", exercise)
       .then(() => {
         console.log("Exercise added successfully")
       })
       .catch((err) => {
         console.log(err);
       });
-      router.reload("/");
+      router.push("/exercises");
     }
     setUsername("");
     setDescription("");
@@ -48,8 +48,8 @@ function CreateExercise() {
       <Head>
         <title>Create Exercise</title>
       </Head>
-      <form action="" className="flex flex-col items-center space-y-5 w-2/4">
-        <h1 className="text-white text-4xl font-bold">Create Exercise</h1>
+      <form action="" className="w-4/4 flex flex-col items-center space-y-5 md:w-2/4">
+        <h1 className="text-3xl text-white md:text-4xl font-bold">Create Exercise</h1>
         <input
           className=" py-2 w-full rounded  px-5"
           type="text"

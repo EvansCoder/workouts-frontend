@@ -6,7 +6,12 @@ module.exports = {
     "./Layout/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing:{
+        "offscreen": "-100vh",
+        "halfscreen": "50vh",
+      }
+    },
   },
   plugins: [],
 }

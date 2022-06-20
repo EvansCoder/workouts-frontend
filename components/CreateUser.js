@@ -16,16 +16,16 @@ function CreateUser() {
     if (username === "") {
       alert("Please fill in your username");
     } else {
-      axios.post(`${process.env.API_BASE_ENDPOINT}users/add`, user)
+      axios.post("https://backend-workouts.vercel.app/users/add", user)
         .then(() => {
-          alert("User added successfully");
+          console.log("User added successfully");
+          router.push("/");
+          setUsername("");
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
+         alert("The user already exists");
         });
-      router.push("/");
     }
-    setUsername("");
   };
   return (
     <div className="bg-gray-700  h-screen flex flex-col items-center justify-center">
