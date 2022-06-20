@@ -9,7 +9,7 @@ function ExercisesList() {
   const router = useRouter();
   useEffect(() => {
     const getExercises = async () => {
-      let res = await axios.get("http://localhost:3001/exercises");
+      let res = await axios.get("https://backend-workouts.vercel.app/exercises");
       const data = res.data;
       console.log(data.map((exercises) => ({ id: exercises._id })));
       setExercises(
