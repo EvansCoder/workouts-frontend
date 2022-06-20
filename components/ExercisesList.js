@@ -9,7 +9,7 @@ function ExercisesList() {
   const router = useRouter();
   useEffect(() => {
     const getExercises = async () => {
-      let res = await axios.get("https://backend-workouts.vercel.app/exercises");
+      let res = await axios.get("http://localhost:3001/exercises");
       const data = res.data;
       console.log(data.map((exercises) => ({ id: exercises._id })));
       setExercises(
@@ -26,7 +26,7 @@ function ExercisesList() {
   }, []);
   const deleteExercise = (id) => {
     axios
-      .delete("https://backend-workouts.vercel.app/exercises/" + id)
+      .delete("http://localhost:3001/exercises/" + id)
       .then(() => router.reload("/"));
   };
 

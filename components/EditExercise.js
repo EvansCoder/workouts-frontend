@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -27,7 +27,7 @@ function EditExercise() {
     }
     else {
     axios
-      .post("https://backend-workouts.vercel.app/exercises/update/"+id, updateExercise)
+      .post("http://localhost:3001/exercises/update/"+id, updateExercise)
       .then(() => {
         alert("Exercise updated");
       })
