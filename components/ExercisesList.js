@@ -30,53 +30,71 @@ function ExercisesList() {
   };
 
   return (
-    <div className="mt-5 bg-gray-700 w-full h-fit min-h-screen flex flex-col items-center justify-start">
+    <div  className="mt-5 bg-gray-600 w-full h-fit min-h-screen flex flex-col items-center justify-start">
       <Head>
         <title>Exercises</title>
       </Head>
-      <h1 className="text-white text-4xl font-bold mb-2 mt-14">
+      <h1  className="text-white text-4xl font-bold mb-2 mt-14">
         Exercises List
       </h1>
-      <table className="bg-gray-800 table-auto  md:table-fixed w-full lg:w-11/12 mt-5">
-        <thead>
-          <tr className="border border-gray-600 text-white text-xl font-bold text-left">
-            <th className="py-5 text-center">Username</th>
-            <th>Description</th>
-            <th>Duration(mins)</th>
-            <th>Date</th>
-            <th>Actions</th>
-          </tr>
+      
+      <div className="relative  shadow-md sm:rounded-lg mt-5">
+    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" className="px-6 py-3">
+                    Username
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Description
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Duration(min)
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Date
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    <span className="">Actions</span>
+                </th>
+            </tr>
         </thead>
         <tbody>
-          {exercises.map((exercise, id) => {
-            return (
-              <tr
-                key={id}
-                className="border border-gray-700 text-white text-left text-base font-semibold"
-              >
-                <td className=" py-4 text-center">{exercise.username}</td>
-                <td>{exercise.description}</td>
-                <td className="text-left pl-10">{exercise.duration}</td>
-                <td>{exercise.date.substring(0, 10)}</td>
-                <td className="space-x-5">
-                  <Link href={"/edit/" + exercise.id}>
-                    <a className="bg-green-400 rounded py-2 px-2 md:px-4">Edit</a>
+        {exercises.map((exercise, id) => {
+            return (<tr key={id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                    {exercise.username}
+                </th>
+                <td className="px-6 py-4">
+                    {exercise.description}
+                </td>
+                <td className="px-6 py-4">
+                    {exercise.duration}
+                </td>
+                <td className="px-6 py-4">
+                   {exercise.date.substring(0, 10)}
+                </td>
+                <td  className="px-6 py-4 text-right space-x-2 text-gray-200 text-sm">
+                <Link href={"/edit/" + exercise.id}>
+                    <a  className="bg-green-400 rounded py-1 px-2">Edit</a>
                   </Link>
                   <Link href="">
                     <a
                       onClick={() => deleteExercise(exercise.id)}
-                      className="bg-red-400  rounded py-2 px-2 md:px-4"
+                       className="bg-red-400  rounded py-1 px-2"
                     >
                       {" "}
                       Delete
                     </a>
                   </Link>
                 </td>
-              </tr>
-            );
-          })}
+            </tr>
+            
+             );
+            })}
         </tbody>
-      </table>
+    </table>
+</div>
     </div>
   );
 }
