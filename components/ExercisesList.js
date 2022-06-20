@@ -37,7 +37,7 @@ function ExercisesList() {
       <h1 className="text-white text-4xl font-bold mb-2 mt-14">
         Exercises List
       </h1>
-      <table className="bg-gray-800 table-auto overflow-auto  md:table-fixed w-full lg:w-11/12 mt-5">
+      <table className="bg-gray-800 table-auto  md:table-fixed w-full lg:w-11/12 mt-5">
         <thead>
           <tr className="border border-gray-600 text-white text-xl font-bold text-left">
             <th className="py-5 text-center">Username</th>
