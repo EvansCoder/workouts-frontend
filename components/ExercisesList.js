@@ -26,7 +26,7 @@ function ExercisesList() {
   }, []);
   const deleteExercise = (id) => {
     axios
-      .delete("http://localhost:3001/exercises/" + id)
+      .delete("https://backend-workouts.vercel.app/exercises/" + id)
       .then(() => router.reload("/"));
   };
 
