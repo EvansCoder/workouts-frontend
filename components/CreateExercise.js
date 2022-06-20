@@ -9,8 +9,8 @@ import "react-datepicker/dist/react-datepicker.css";
 function CreateExercise() {
   const [username, setUsername] = useState("");
   const [description, setDescription] = useState("");
-  const [duration, setDuration] = useState(0);
-  const [date, setDate] = useState(new Date());
+  const [duration, setDuration] = useState("");
+  const [date, setDate] = useState("");
   
 
   const router = useRouter();
@@ -71,7 +71,7 @@ function CreateExercise() {
           value={duration}
           onChange={(e) => setDuration(e.target.value)}
         />
-         <DatePicker placeholderText="Pick the Date"  className="py-2 w-full rounded  px-5" selected={date} onChange={(date) => setDate(date)}/>
+         <DatePicker placeholderText="Pick the Date"  className="py-2 w-full rounded  px-5" selected={""} onChange={(date) => setDate(date)}/>
         <button
           className="border w-2/4 py-3 border-none text-gray-800 hover:bg-blue-400 rounded bg-blue-500"
           type="submit"
