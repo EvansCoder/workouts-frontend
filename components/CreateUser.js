@@ -16,7 +16,7 @@ function CreateUser() {
     if (username === "") {
       alert("Please fill in your username");
     } else {
-      axios.post("http://localhost:3001/users/add", user)
+      axios.post("https://backend-workouts.vercel.app/users/add", user)
         .then(() => {
           alert("User added successfully");
         })
